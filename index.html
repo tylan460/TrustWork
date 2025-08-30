@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trust Work — On-Demand Jobs With Built-In Trust</title>
+  <meta name="description" content="Trust Work connects urgent jobs with ready workers. Funds are held in-platform until completion for safety and fairness." />
+  <meta property="og:title" content="Trust Work — On-Demand Jobs With Built-In Trust" />
+  <meta property="og:description" content="Post a task. Get it done. Funds held securely until completion." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+
+
+  
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #101827;
+      --muted: #9aa4b2;
+      --text: #e5e7eb;
+      --brand: #0ea5e9;
+      --brand-2: #22c55e;
+      --ring: rgba(14,165,233,0.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 700px at 80% -10%, rgba(14,165,233,0.15), transparent 60%),
+                  radial-gradient(900px 600px at -10% 120%, rgba(34,197,94,0.15), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans";
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);
+      background: rgba(16,24,39,0.6); border-bottom:1px solid rgba(255,255,255,0.06); z-index:50;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo-mark{width:28px;height:28px;border-radius:8px;
+      background: conic-gradient(from 180deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 8px 24px rgba(14,165,233,0.35);
+    }
+    .badge{font-size:12px;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,0.12);color:var(--muted)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .cta{
+      padding:10px 14px;border-radius:10px; background:linear-gradient(135deg,var(--brand),#38bdf8);
+      color:#00131c;font-weight:700;border:none;cursor:pointer;
+      box-shadow: 0 10px 24px rgba(14,165,233,0.35);
+    }
+    .hero{padding:64px 0 32px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+    .title{font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0 0 12px}
+    .subtitle{color:var(--muted);max-width:50ch;margin:0 0 18px}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:18px;
+    }
+    .hero-list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+    .hero-list li{
+      display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06); padding:10px;border-radius:12px
+    }
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);margin-top:6px}
+    section{padding:26px 0}
+    .section-title{font-size:22px;margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .tag{display:inline-block; font-size:12px; padding:4px 8px; border:1px solid rgba(255,255,255,0.12);
+      border-radius:999px; color:var(--muted); margin-right:6px; margin-top:6px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .disclaimer{font-size:12px;color:var(--muted)}
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:var(--muted)}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .footer{border-top:1px solid rgba(255,255,255,0.08); color:var(--muted); padding:18px 0 36px; font-size:14px}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .nav .menu-btn{display:inline-flex}
+    }
+    @media (min-width: 901px){ .nav .menu-btn{display:none} }
+    :focus-visible{outline:2px solid var(--ring); outline-offset:2px; border-radius:8px}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#">
+        <span class="logo-mark"></span>
+        <span>Trust Work</span>
+        <span class="badge">ALPHA</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#how">How it works</a>
+        <a href="#trust">Safety</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="cta menu-btn">Menu</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Because Today Matters</p>
+          <h1 class="title">On-Demand Work with <span>Built-In Trust</span></h1>
+          <p class="subtitle">
+            Post a task. Get matched with nearby, verified workers in minutes. Funds are held securely until the job is marked complete.
+          </p>
+          <div class="pill-row">
+            <a class="cta" href="#how">See how it works</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <ul class="hero-list">
+            <li><span class="dot"></span><div><strong>Instant matches:</strong> Hire or work for an hour, a day, or a week.</div></li>
+            <li><span class="dot"></span><div><strong>Escrow payments:</strong> Funds released only after completion.</div></li>
+            <li><span class="dot"></span><div><strong>Verified safety:</strong> Ratings, reviews, and ID checks.</div></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="problem">
+      <h2 class="section-title">The Problem</h2>
+      <p class="muted">People need urgent help for everyday tasks and jobs, but finding trustworthy help fast is risky. Workers also face no-shows and late payments.</p>
+      <div class="cards">
+        <article class="card"><h3>Last-minute needs</h3><p>Cleaning, repairs, tutoring — delays are costly.</p></article>
+        <article class="card"><h3>Trust gap</h3><p>No guarantee jobs will be done or workers will be paid.</p></article>
+        <article class="card"><h3>Fragmented tools</h3><p>Chats here, payments there — no single platform.</p></article>
+      </div>
+    </section>
+
+    <section id="solution">
+      <h2 class="section-title">Our Solution</h2>
+      <div class="grid-2">
+        <div class="card"><h3>Bolt-style job requests</h3><p>Post what you need, set time and budget, and get matched instantly.</p></div>
+        <div class="card"><h3>Secure escrow</h3><p>Funds are held until both parties confirm completion.</p></div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2 class="section-title">How It Works</h2>
+      <div class="cards">
+        <article class="card"><h3>1) Post a job</h3><p>Describe task, location, and budget.</p></article>
+        <article class="card"><h3>2) Match & chat</h3><p>Get matched, clarify scope, lock in time.</p></article>
+        <article class="card"><h3>3) Secure payment</h3><p>Deposit goes to escrow, released on completion.</p></article>
+      </div>
+    </section>
+
+    <section id="trust">
+      <h2 class="section-title">Safety & Trust</h2>
+      <ul class="list">
+        <li><strong>Identity:</strong> Verified login & optional ID checks.</li>
+        <li><strong>Reputation:</strong> Ratings, reviews, repeat hires.</li>
+        <li><strong>Disputes:</strong> Resolution flow for fairness.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Get Early Access</h2>
+      <form class="grid-2" onsubmit="return false;">
+        <div class="card">
+          <label for="email"><strong>Email</strong></label>
+          <input id="email" type="email" placeholder="you@domain.com"
+            style="margin-top:8px;width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#0c1526;color:var(--text)" />
+        </div>
+        <div class="card">
+          <label for="role"><strong>Your role</strong></label>
+          <select id="role" style="margin-top:8px;width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.12);background:#0c1526;color:var(--text)">
+            <option value="poster">I post jobs</option>
+            <option value="worker">I do jobs</option>
+            <option value="both">Both</option>
+          </select>
+          <button class="cta" style="margin-top:12px" id="submitBtn">Join waitlist</button>
+          <p id="formMsg" class="disclaimer"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap">
+      <span>© <span id="year"></span> Trust Work</span>
+      <span class="muted">Prototype UI</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const email = document.getElementById('email');
+    const role = document.getElementById('role');
+    const formMsg = document.getElementById('formMsg');
+    document.getElementById('submitBtn')?.addEventListener('click', () => {
+      const val = (email?.value || '').trim();
+      if(!val.includes('@')){
+        formMsg.textContent = 'Please enter a valid email.';
+        formMsg.style.color = '#fca5a5';
+        return;
+      }
+      formMsg.textContent = 'Thanks! You are on the waitlist.';
+      formMsg.style.color = '#a7f3d0';
+    });
+  </script>
+</body>
+</html>
